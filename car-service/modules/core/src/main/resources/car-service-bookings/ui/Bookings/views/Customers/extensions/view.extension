@@ -1,0 +1,5 @@
+{
+	"description": "Customers view",
+	"extensionPoint": "launchpad-car-service-Bookings-view",
+	"module": "car-service-bookings/ui/Bookings/views/Customers/extensions/view.js"
+}

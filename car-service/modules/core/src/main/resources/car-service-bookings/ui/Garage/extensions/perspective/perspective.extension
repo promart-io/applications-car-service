@@ -1,0 +1,5 @@
+{
+	"description": "Garage perspective",
+	"extensionPoint": "launchpad-car-service-perspective",
+	"module": "car-service-bookings/ui/Garage/extensions/perspective/perspective.js"
+}

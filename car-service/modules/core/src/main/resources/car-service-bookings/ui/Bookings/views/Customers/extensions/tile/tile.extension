@@ -1,0 +1,5 @@
+{
+	"description": "Bookings tiles",
+	"extensionPoint": "launchpad-car-service-tiles",
+	"module": "car-service-bookings/ui/Bookings/views/Customers/extensions/tile/tile.js"
+}

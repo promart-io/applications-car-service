@@ -1,0 +1,5 @@
+{
+	"description": "Garage view",
+	"extensionPoint": "launchpad-car-service-Garage-view",
+	"module": "car-service-bookings/ui/Garage/views/master/Brands/extensions/view.js"
+}

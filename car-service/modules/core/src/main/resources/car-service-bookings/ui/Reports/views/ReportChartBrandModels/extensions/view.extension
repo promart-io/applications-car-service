@@ -1,0 +1,5 @@
+{
+	"description": "ReportChartBrandModels view",
+	"extensionPoint": "launchpad-car-service-Reports-view",
+	"module": "car-service-bookings/ui/Reports/views/ReportChartBrandModels/extensions/view.js"
+}

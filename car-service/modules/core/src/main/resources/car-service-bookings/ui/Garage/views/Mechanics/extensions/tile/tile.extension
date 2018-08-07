@@ -1,0 +1,5 @@
+{
+	"description": "Garage tiles",
+	"extensionPoint": "launchpad-car-service-tiles",
+	"module": "car-service-bookings/ui/Garage/views/Mechanics/extensions/tile/tile.js"
+}

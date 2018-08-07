@@ -1,0 +1,5 @@
+{
+	"description": "Home perspective",
+	"extensionPoint": "launchpad-car-service-perspective",
+	"module": "car-service-bookings/ui/extensions/perspective.js"
+}

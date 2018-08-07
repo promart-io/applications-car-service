@@ -1,0 +1,5 @@
+{
+	"description": "Reports tiles",
+	"extensionPoint": "launchpad-car-service-tiles",
+	"module": "car-service-bookings/ui/Reports/views/ReportChartBrandModels/extensions/tile/tile.js"
+}

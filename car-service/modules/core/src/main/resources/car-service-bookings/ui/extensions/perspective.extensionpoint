@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the car-service Perspective Providers",
+	"name": "launchpad-car-service-perspective"
+}

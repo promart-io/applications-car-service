@@ -1,0 +1,5 @@
+{
+	"description": "ReportChartBrandModels menu",
+	"extensionPoint": "shell-car-service-bookings-menu",
+	"module": "car-service-bookings/views/ReportChartBrandModels/menu/item.js"
+}

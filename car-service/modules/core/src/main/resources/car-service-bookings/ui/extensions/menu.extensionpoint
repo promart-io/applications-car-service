@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the car-service-bookings Menu Providers",
+	"name": "launchpad-car-service-bookings-menu"
+}

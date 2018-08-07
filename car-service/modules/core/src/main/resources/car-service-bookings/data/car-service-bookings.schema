@@ -1,0 +1,207 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "CAR_SERVICE_BRANDS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "name": "BRAND_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "BRAND_NAME"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_MODELS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "name": "MODEL_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "MODEL_NAME"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "MODEL_BRAND_ID"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_CARS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "name": "CAR_ID"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "CAR_MODEL"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 16,
+                        "name": "CAR_NUMBER_PLATE"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 1024,
+                        "nullable": true,
+                        "name": "CAR_NOTES"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "CAR_BOOKING_ID"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_CUSTOMERS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CUSTOMER_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "CUSTOMER_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "nullable": true,
+                        "name": "CUSTOMER_EMAIL"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 32,
+                        "name": "CUSTOMER_PHONE"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "nullable": true,
+                        "name": "CUSTOMER_ADDRESS"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "nullable": true,
+                        "name": "CUSTOMER_CITY"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "nullable": true,
+                        "name": "CUSTOMER_STATE"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 1024,
+                        "nullable": true,
+                        "name": "CUSTOMER_NOTES"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_BOOKINGS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "BOOKING_ID"
+                    }, {
+                        "type": "DATE",
+                        "length": 0,
+                        "name": "BOOKING_DATE"
+                    }, {
+                        "type": "TIME",
+                        "length": 0,
+                        "name": "BOOKING_TIME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 1024,
+                        "nullable": true,
+                        "name": "BOOKING_NOTES"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "BOOKING_CUSTOMER_ID"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_MECHANICS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "MECHANIC_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "MECHANIC_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 32,
+                        "name": "MECHANIC_PHONE"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 1024,
+                        "nullable": true,
+                        "name": "MECHANIC_NOTES"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_BOOKING_MECHANICS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "BOOKING_MECHANIC_ID"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "BOOKING_MECHANIC_BOOKING_ID"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "BOOKING_MECHANIC_MECHANIC_ID"
+                    }]
+            }, {
+                "name": "CAR_SERVICE_REPORT_CHART_BRAND_MODELS",
+                "type": "VIEW",
+                "columns": [{
+                    "query": "SELECT BRAND_NAME, COUNT(*) AS MODELS_COUNT
+FROM CAR_SERVICE_BRANDS, CAR_SERVICE_MODELS
+WHERE BRAND_ID = MODEL_BRAND_ID
+GROUP BY BRAND_NAME
+ORDER BY MODELS_COUNT
+DESC"
+                }]
+            }, {
+                "name": "CAR_SERVICE_REPORT_LIST_BRAND_MODELS",
+                "type": "VIEW",
+                "columns": [{
+                    "query": "SELECT BRAND_NAME, MODEL_NAME 
+FROM CAR_SERVICE_BRANDS, CAR_SERVICE_MODELS
+WHERE BRAND_ID = MODEL_BRAND_ID
+ORDER BY BRAND_NAME, MODEL_NAME"
+                }]
+            }]
+    }
+}

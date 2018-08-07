@@ -1,0 +1,5 @@
+{
+	"description": "Customers menu",
+	"extensionPoint": "shell-car-service-bookings-menu",
+	"module": "car-service-bookings/views/Customers/menu/item.js"
+}

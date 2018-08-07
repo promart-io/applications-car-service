@@ -1,0 +1,4 @@
+{
+	"description": "Extension Point for the car-service Tiles Providers",
+	"name": "launchpad-car-service-tiles"
+}
