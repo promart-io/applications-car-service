@@ -76,7 +76,7 @@
 	<!--
 	<security-constraint>
 	    <web-resource-collection>
-	        <web-resource-name>Zeus User</web-resource-name>
+	        <web-resource-name>Car Service User</web-resource-name>
 	        <url-pattern>/services/v3/web/*</url-pattern>
 	        <url-pattern>/services/v3/js/*</url-pattern>
 	    </web-resource-collection>
